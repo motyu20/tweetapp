@@ -38,13 +38,7 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-.menu-icon {
-  color: white;
-  float: right;
-  font-size: 25px;
-  padding: 21px 0;
-  display: none;
-}
+
 
 /* 共通レイアウト ================================ */
 body {
@@ -109,6 +103,14 @@ header {
   float: left;
   font-size: 13px;
   color: white;
+}
+
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
 }
 
 .header-menus .fa {
