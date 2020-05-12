@@ -15,14 +15,15 @@
 		    <div class="header-logo">
 	    		<% if @current_user %>
           			<%= link_to("MozApp", "/posts/index") %>
-          			<%= link_to("MoztApp", "/posts/index") %>
 
         		<% else %>
           			<%= link_to("MozApp", "/") %>
         		<% end %>
 	  		</div>
 		    <ul class="header-menus">
-
+			  <a href="#" class="menu-icon">
+			    <span class="fa fa-bars menu-icon"></span>
+			  </a>
 		    	<% if @current_user %>
           			<li>
             			<%= link_to(@current_user.name, "/users/#{@current_user.id}") %>

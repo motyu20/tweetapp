@@ -38,6 +38,14 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
+}
+
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
@@ -240,4 +248,23 @@ header {
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 14px;
+}
+
+@media all and (max-width: 670px) {
+  
+  .menu-icon {
+    display: block;
+  }
+
+  .header-logo {
+    font-size: 25px;
+  }
+
+  .header-menus a {
+    font-size: 14px;
+  }
+  
+  .header-menus li {
+    display: none;
+  }
 }

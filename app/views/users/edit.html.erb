@@ -10,13 +10,10 @@
         <% end %>
         <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
           <p>ユーザー名</p>
-          <!-- 1行の入力フォームを作成し、nameを初期値として表示してください -->
           <input name="name" value="<%= @user.name %>">
           <p>画像</p>
-          <!-- 画像用のフォームを追加してください -->
           <input name="image" type="file">
           <p>メールアドレス</p>
-          <!-- 1行の入力フォームを作成し、emailを初期値として表示してください-->
           <input name="email" value="<%= @user.email %>">
           <input type="submit" value="保存">
         <% end %>
