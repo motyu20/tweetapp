@@ -6,7 +6,7 @@
 
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 	</head>
 
@@ -20,10 +20,11 @@
           			<%= link_to("MozApp", "/") %>
         		<% end %>
 	  		</div>
-		    <ul class="header-menus">
+			<ul class="header-menus">
 			  <%= link_to("#", {class: "menu-icon"}) do %>
                 <span class="fa fa-bars menu-icon"></span>
               <% end %>
+			  <div class="header-menu" id="menus">
 		    	<% if @current_user %>
           			<li>
             			<%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
@@ -41,16 +42,17 @@
 	            		<%= link_to("ログアウト", "/logout", {method: :post})%>
 	          		</li>
 	          	<% else %>
-          		<li>
-            		<%= link_to("MozAppとは", "/about") %>
-		        </li>
-		        <li>
-		            <%= link_to("新規登録", "/signup") %>
-		        </li>
-		        <li>
-		            <%= link_to("ログイン", "/login") %>
-		        </li>
+          		  <li>
+            		  <%= link_to("MozAppとは", "/about") %>
+		          </li>
+		          <li>
+		              <%= link_to("新規登録", "/signup") %>
+		          </li>
+		          <li>
+		              <%= link_to("ログイン", "/login") %>
+		          </li>
 		        <% end %>	
+			  </div>
 		    </ul>
 	  	</header>
 	    <% if flash[:notice] %>
