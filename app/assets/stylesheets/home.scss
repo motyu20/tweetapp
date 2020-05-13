@@ -255,7 +255,7 @@ header {
 @media all and (max-width: 670px) {
   
   .menu-icon {
-    display: block;
+    display: inline;
   }
 
   .header-logo {
@@ -268,7 +268,7 @@ header {
   
   .header-menu {
     display: none;
-    width: 100px;
+    width: 100%;
     position: absolute;
     margin-right: -5px;
     margin-top: 5px;
@@ -283,7 +283,7 @@ header {
   .header-menu li a {
     padding: 5px 0;
     margin: -5px 5px -5px -5px;
-    display: block;
+    display: inline;
     color: #fff;
   }
 
