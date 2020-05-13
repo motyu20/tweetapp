@@ -91,7 +91,7 @@ header {
   padding-right: 20px;
 }
 
-.header-menus li {
+.header-menu li {
   float: left;
   line-height: 64px;
   font-size: 13px;
@@ -99,7 +99,7 @@ header {
   padding-left: 15px;
 }
 
-.header-menus a {
+.header-menu a {
   float: left;
   font-size: 13px;
   color: white;
@@ -117,7 +117,7 @@ header {
   padding-right: 5px;
 }
 
-.header-menus input[type="submit"] {
+.header-menu input[type="submit"] {
   padding: 0 20px;
   float: left;
   line-height: 64px;
@@ -262,11 +262,34 @@ header {
     font-size: 25px;
   }
 
-  .header-menus a {
+  .header-menu a {
     font-size: 14px;
   }
   
-  .header-menus li {
+  .header-menu {
     display: none;
+    width: 100px;
+    position: absolute;
+    margin-right: -5px;
+    margin-top: 5px;
+    padding: 0;
+    background: #b4c4d0;
   }
+
+  .header-menu li {
+    width: 100%;
+  }
+
+  .header-menu li a {
+    padding: 5px 0;
+    margin: -5px 5px -5px -5px;
+    display: block;
+    color: #fff;
+  }
+
+  li a:hover {
+    background: #81a7d2;
+    color:  #69727c;
+  }
+
 }
