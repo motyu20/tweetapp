@@ -1,5 +1,5 @@
 $(function() {
   $('.menu-icon').click(function() {
-      $('#menus').slideDown();
+      $('.header-menu').slideDown();
   });
 });

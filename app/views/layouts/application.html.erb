@@ -24,7 +24,7 @@
 			  <%= link_to("#", {class: "menu-icon"}) do %>
                 <span class="fa fa-bars menu-icon"></span>
               <% end %>
-			  <div class="header-menu" id="menus">
+			  <div class="header-menu">
 		    	<% if @current_user %>
           			<li>
             			<%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
