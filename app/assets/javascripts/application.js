@@ -15,3 +15,10 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+$(function() {
+    $('.menu-icon').click(function() {
+        $('.header-menu li').slideToggle();
+    });
+  });
+  

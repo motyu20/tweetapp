@@ -261,10 +261,6 @@ header {
   .header-logo {
     font-size: 25px;
   }
-
-  .header-menu a {
-    font-size: 14px;
-  }
   
   .header-menu {
     display: none;
@@ -281,6 +277,7 @@ header {
     padding: 5px 0;
     margin: -5px 5px -5px -5px;
     color: #fff;
+    font-size: 14px;
   }
 
   .header-menu li a:hover {
