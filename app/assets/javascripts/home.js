@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $('.menu-icon').click(function() {
       $('.header-menu li').slideToggle();
   });
