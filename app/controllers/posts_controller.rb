@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id
-      image_name: params[:image]
+      image: params[:image]
     )
     if @post.save
       flash[:notice] = "投稿を作成しました"
