@@ -27,8 +27,8 @@ class PostsController < ApplicationController
   
     if params[:post_image]
       @post.post_image = "#{@post.id}.jpg"
-      image = params[:post_image]
-      File.binwrite("/public/post_images/#{@post.post_image}", image.read)
+      image = params[:image_name]
+      File.binwrite("public/post_images/#{@post.image_name}", image.read)
     end
 
     if @post.save
@@ -50,8 +50,8 @@ class PostsController < ApplicationController
 
     if params[:post_image]
       @post.post_image = "#{@post.id}.jpg"
-      image = params[:post_image]
-      File.binwrite("/public/post_images/#{@post.post_image}", image.read)
+      image = params[:image_name]
+      File.binwrite("public/post_images/#{@post.image_name}", image.read)
     end
 
     if @post.save
