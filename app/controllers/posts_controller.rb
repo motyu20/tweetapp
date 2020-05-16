@@ -22,6 +22,8 @@ class PostsController < ApplicationController
       user_id: @current_user.id
       post_image: nil
     )
+
+    @post.save
   
     if params[:post_image]
       @post.post_image = "#{@post.id}.jpg"
