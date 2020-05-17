@@ -39,6 +39,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.image_name = params[:image]
     
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
