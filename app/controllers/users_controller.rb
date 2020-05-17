@@ -40,9 +40,9 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     
-    if params[:image]
+    if params[:image_name]
       @user.image_name = "#{@user.id}.jpg"
-      image = params[:image]
+      image = params[:image_name]
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
     
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      session[:image] = @user.image_name
+      session[:image_name] = @user.image_name
       flash[:notice] = "ログインしました"
       redirect_to("/posts/index")
     else
