@@ -4,12 +4,24 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order(created_at: :desc)
+    if params[:image_name]
+      @post.image_name = "#{@post.id}.jpg"
+      image = params[:image_name]
+      File.binwrite("public/post_images/#{@post.image_name}", image.read)
+    end
+
   end
   
   def show
     @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
+    if params[:image_name]
+      @post.image_name = "#{@post.id}.jpg"
+      image = params[:image_name]
+      File.binwrite("public/post_images/#{@post.image_name}", image.read)
+    end
+
   end
   
   def new
@@ -20,6 +32,7 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id,
+      image_name: params[:image_name]
     )
   　
     if params[:image_name]
