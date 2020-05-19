@@ -10,12 +10,6 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
-    if params[:image_name]
-      @post.image_name = "#{@post.id}.jpg"
-      image = params[:image_name]
-      File.binwrite("public/post_images/#{@post.image_name}", image.read)
-    end
-
   end
   
   def new
@@ -28,6 +22,8 @@ class PostsController < ApplicationController
       user_id: @current_user.id,
       image_name: params[:image_name]
     )
+
+    @post.save
   　
     if params[:image_name]
       @post.image_name = "#{@post.id}.jpg"
