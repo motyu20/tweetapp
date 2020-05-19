@@ -11,7 +11,7 @@
             </div>
           <% end %>
 	        <textarea name="content"><%= @post.content %></textarea>
-          <%= @post.image_name %>
+          <img src="<%= "/post_images/#{@post.image_name}" %>"　width="200p">
           <input name="image_name" type="file">
 	        <input type="submit" value="保存">
 	      </div>
