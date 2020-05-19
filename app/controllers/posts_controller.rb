@@ -4,12 +4,6 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order(created_at: :desc)
-    if params[:image_name]
-      @post.image_name = "#{@post.id}.jpg"
-      image = params[:image_name]
-      File.binwrite("public/post_images/#{@post.image_name}", image.read)
-    end
-
   end
   
   def show
