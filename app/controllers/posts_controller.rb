@@ -20,8 +20,17 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id,
+      image_name: nil
     )
     
+    @post.save
+
+    if params[:image_name]
+      @post.image_name = "#{@post.id}.jpg"
+      image = params[:image_name]
+      File.binwrite("public/post_images/#{@post.image_name}",image.read)
+    end
+
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
@@ -37,6 +46,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
+    @post.image_name = params[:image_name]
+
+    if params[:image_name]
+      @post.image_name = "#{@post.id}.jpg"
+      image = params[:image_name]
+      File.binwrite("public/post_images/#{@post.image_name}",image.read)
+    end
     
     if @post.save
       flash[:notice] = "投稿を編集しました"
@@ -60,9 +76,5 @@ class PostsController < ApplicationController
     end
   end
 
-  private
-  def post_params
-    params.require(:post).permit(:content, :image_name)
-  end
   
 end
