@@ -8,9 +8,11 @@
       <p>
         <%= @post.content %>
       </p>
-      <% if params[:post_image] %>
-        <img src="<%= "/post_images/#{@post.post_image}" %>">
-      <% end %>
+      <div class="post-image">
+        <% if params[:post_image] %>
+          <img src="<%= "/post_images/#{@post.post_image}" %>">
+        <% end %>
+      </div>
       <div class="post-time">
         <%= @post.created_at %>
       </div>

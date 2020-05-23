@@ -22,7 +22,11 @@
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
           <%= link_to(post.content, "/posts/#{post.id}") %>
-          <img src="<%= "/post_images/#{post.image_name}" %>">
+          <div class="post-image">
+            <% if params[:post_image] %>
+               <img src="<%= "/post_images/#{post.post_image}" %>">
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

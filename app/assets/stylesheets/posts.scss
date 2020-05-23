@@ -34,6 +34,10 @@
   text-align: left;
 }
 
+.post-image img {
+  width: 60%;
+}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;
@@ -64,6 +68,10 @@
 .posts-show-item p {
   font-size: 24px;
   margin: 20px 0;
+}
+
+.post-image img {
+  width: 60%;
 }
 
 .post-time {
