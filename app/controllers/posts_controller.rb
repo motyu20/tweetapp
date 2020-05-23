@@ -20,14 +20,15 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id,
+      post_image: null
     )
 
     @post.save
 
-    if params[:image_name]
-      @post.image_name = "#{@post.id}.jpg"
-      image = params[:image_name]
-      File.binwrite("public/post_images/#{@post.image_name}", image.read)
+    if params[:post_image]
+      @post.post_image = "#{@post.id}.jpg"
+      image = params[:post_image]
+      File.binwrite("public/post_images/#{@post.post_image}", image.read)
     end
     
     if @post.save
@@ -45,12 +46,12 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
-    @post.image_name = params[:image_name]
+    @post.post_image = params[:post_image]
 
-    if params[:image_name]
-      @post.image_name = "#{@post.id}.jpg"
-      image = params[:image_name]
-      File.binwrite("public/post_images/#{@post.image_name}", image.read)
+    if params[:post_image]
+      @post.post_image = "#{@post.id}.jpg"
+      image = params[:post_image]
+      File.binwrite("public/post_images/#{@post.post_image}", image.read)
     end
     
     if @post.save
