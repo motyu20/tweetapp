@@ -20,10 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id,
-      post_image: null
     )
-
-    @post.save
 
     if params[:post_image]
       @post.post_image = "#{@post.id}.jpg"
@@ -46,7 +43,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
-    @post.post_image = params[:post_image]
+    
 
     if params[:post_image]
       @post.post_image = "#{@post.id}.jpg"
