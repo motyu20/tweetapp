@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id,
-      iamge_name: null
+      post_image: null
     )
 
     @post.save
